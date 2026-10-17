@@ -2,9 +2,9 @@
 def hanoi_solver(num: int) -> str:
     """A function that solves the classic Tower of Hanoi puzzle using recursion."""
     # Initialize the rods.
-    rod1 = [disc for disc in range(num, 0, -1)]
-    rod2 = [int]
-    rod3 = [int]
+    rod1: list[int] = [disc for disc in range(num, 0, -1)]
+    rod2:  list[int]  = []
+    rod3:  list[int]  = []
 
     def get_lists_string():
         """Returns the current state of the rods."""
@@ -40,3 +40,5 @@ def hanoi_solver(num: int) -> str:
         history.extend(move_tower(rod1, rod3, rod2, num))
 
     return "\n".join(history)
+
+print(hanoi_solver(0))
